@@ -10,162 +10,112 @@ status: active
 
 ## Language & Framework
 
-:::rule id="STD-CS-001" severity="error" category="language" domain="csharp"
-title: .NET SDK and C# Version Target
-
+:::rule id="STD-CS-001" severity="error" category="language" domain="csharp" tags="csharp, language, target, net, sdk, version"
 The C# codebase shall target .NET SDK ≥ 9.0 and C# language version ≥ 13.
 :::
 
-:::rule id="STD-CS-002" severity="error" category="language" domain="csharp"
-title: File-Scoped Namespaces
-
+:::rule id="STD-CS-002" severity="error" category="language" domain="csharp" tags="csharp, language, file-scoped, namespaces, enforced, editorconfig"
 All C# files shall use file-scoped namespaces as enforced by `.editorconfig`.
 :::
 
-:::rule id="STD-CS-003" severity="error" category="language" domain="csharp"
-title: Nullable Reference Types
-
+:::rule id="STD-CS-003" severity="error" category="language" domain="csharp" tags="csharp, language, enable, nullable, reference, types"
 All C# projects shall enable nullable reference types and treat nullable warnings as errors.
 :::
 
-:::rule id="STD-CS-004" severity="error" category="language" domain="csharp"
-title: Async/Await for IO Operations
-
+:::rule id="STD-CS-004" severity="error" category="language" domain="csharp" tags="csharp, language, io-bound, operations, async-await"
 All IO-bound operations in C# shall use async/await.
 :::
 
-:::rule id="STD-CS-005" severity="error" category="language" domain="csharp"
-title: ConfigureAwait Usage
-
+:::rule id="STD-CS-005" severity="error" category="language" domain="csharp" tags="csharp, language, configureawait, calls, relying, default"
 The C# codebase shall not use `ConfigureAwait` calls, relying on the default ASP.NET Core synchronisation context.
 :::
 
-:::rule id="STD-CS-006" severity="error" category="language" domain="csharp"
-title: Global Using Directives
-
+:::rule id="STD-CS-006" severity="error" category="language" domain="csharp" tags="csharp, language, directives, commonly, shared, global"
 All C# projects shall use global using directives for commonly shared namespaces.
 :::
 
-:::rule id="STD-CS-007" severity="error" category="language" domain="csharp"
-title: Expression-Bodied Members
-
+:::rule id="STD-CS-007" severity="error" category="language" domain="csharp" tags="csharp, language, expression-bodied, members, body, expression"
 C# code shall use expression-bodied members where the body is a single expression.
 :::
 
 ## Architecture & Patterns
 
-:::rule id="STD-CS-010" severity="error" category="architecture" domain="csharp"
-title: Thin API Controllers
-
+:::rule id="STD-CS-010" severity="error" category="architecture" domain="csharp" tags="csharp, architecture, controllers, thin, delegating, business"
 All API controllers shall be thin, delegating business logic to handlers or services.
 :::
 
-:::rule id="STD-CS-011" severity="error" category="architecture" domain="csharp"
-title: EF Core Fluent API
-
+:::rule id="STD-CS-011" severity="error" category="architecture" domain="csharp" tags="csharp, architecture, ef, core, entity, configurations"
 All EF Core entity configurations shall use the Fluent API (no data annotations for schema configuration).
 :::
 
-:::rule id="STD-CS-012" severity="error" category="architecture" domain="csharp"
-title: Repository Base Class
-
+:::rule id="STD-CS-012" severity="error" category="architecture" domain="csharp" tags="csharp, architecture, repository, classes, inherit, repositorybase"
 All repository classes shall inherit from `RepositoryBase<T>` with soft-delete support.
 :::
 
-:::rule id="STD-CS-013" severity="error" category="architecture" domain="csharp"
-title: Reflection-Based Service Registration
-
+:::rule id="STD-CS-013" severity="error" category="architecture" domain="csharp" tags="csharp, architecture, registering, reflection-based, registration, addimplementedinterfaces"
 When registering services, the codebase shall use reflection-based registration via `AddImplementedInterfaces<T>`.
 :::
 
-:::rule id="STD-CS-014" severity="error" category="architecture" domain="csharp"
-title: Service Defaults Registration
-
+:::rule id="STD-CS-014" severity="error" category="architecture" domain="csharp" tags="csharp, architecture, call, builder-addservicedefaults, opentelemetry, health"
 All services shall call `builder.AddServiceDefaults()` for OpenTelemetry, health checks, service discovery, and resilience policies.
 :::
 
 ## Formatting & Linting
 
-:::rule id="STD-CS-020" severity="error" category="quality" domain="csharp"
-title: Code Formatting
-
+:::rule id="STD-CS-020" severity="error" category="quality" domain="csharp" tags="csharp, quality, committing, run, dotnet, format"
 When committing C# code, the developer shall run `dotnet format` and resolve all findings.
 :::
 
-:::rule id="STD-CS-021" severity="error" category="quality" domain="csharp"
-title: Roslyn Analyzer Warnings
-
+:::rule id="STD-CS-021" severity="error" category="quality" domain="csharp" tags="csharp, quality, have, zero, roslyn, analyser"
 The C# codebase shall have zero Roslyn analyser warnings on the `main` branch.
 :::
 
 ## Testing
 
-:::rule id="STD-CS-030" severity="error" category="testing" domain="csharp"
-title: xUnit Test Framework
-
+:::rule id="STD-CS-030" severity="error" category="testing" domain="csharp" tags="csharp, testing, test, xunit, framework"
 All C# test projects shall use xUnit ≥ 2.9.3 as the test framework.
 :::
 
-:::rule id="STD-CS-031" severity="error" category="testing" domain="csharp"
-title: xUnit Test Attributes
-
+:::rule id="STD-CS-031" severity="error" category="testing" domain="csharp" tags="csharp, testing, tests, fact, single-case, theory"
 All C# tests shall use `[Fact]` for single-case tests and `[Theory]` for parameterised tests.
 :::
 
-:::rule id="STD-CS-032" severity="error" category="testing" domain="csharp"
-title: xUnit Test Categorisation
-
+:::rule id="STD-CS-032" severity="error" category="testing" domain="csharp" tags="csharp, testing, tests, xunit, traits, categorisation"
 All C# tests shall use xUnit traits for categorisation (`Category=Unit`, `Category=Integration`, `Category=Aspire`).
 :::
 
-:::rule id="STD-CS-033" severity="error" category="testing" domain="csharp"
-title: Mocking and Assertion Libraries
-
+:::rule id="STD-CS-033" severity="error" category="testing" domain="csharp" tags="csharp, testing, tests, nsubstitute, mocking, fluentassertions"
 All C# tests shall use NSubstitute for mocking and FluentAssertions for assertions.
 :::
 
-:::rule id="STD-CS-034" severity="error" category="testing" domain="csharp"
-title: Code Coverage Requirement
-
+:::rule id="STD-CS-034" severity="error" category="testing" domain="csharp" tags="csharp, testing, line, coverage, measured, coverlet"
 The C# codebase shall maintain ≥ 85% line and branch coverage as measured by coverlet.
 :::
 
 ## Package Management
 
-:::rule id="STD-CS-040" severity="error" category="dependencies" domain="csharp"
-title: Centralized Package Versions
-
+:::rule id="STD-CS-040" severity="error" category="dependencies" domain="csharp" tags="csharp, dependencies, nuget, package, versions, defined"
 All NuGet package versions shall be defined centrally in `Directory.Packages.props`.
 :::
 
-:::rule id="STD-CS-041" severity="error" category="dependencies" domain="csharp"
-title: Project File Package References
-
+:::rule id="STD-CS-041" severity="error" category="dependencies" domain="csharp" tags="csharp, dependencies, individual, reference, packages, specifying"
 Individual C# project files shall reference packages without specifying version numbers.
 :::
 
 ## Minimum Library Versions
 
-:::rule id="STD-CS-050" severity="error" category="dependencies" domain="csharp"
-title: Entity Framework Core Version
-
+:::rule id="STD-CS-050" severity="error" category="dependencies" domain="csharp" tags="csharp, dependencies, ef, core"
 The codebase shall use EF Core ≥ 9.0.
 :::
 
-:::rule id="STD-CS-051" severity="error" category="dependencies" domain="csharp"
-title: Marten Event Sourcing Version
-
+:::rule id="STD-CS-051" severity="error" category="dependencies" domain="csharp" tags="csharp, dependencies, marten, event, sourcing"
 The codebase shall use Marten ≥ 8.13.2 for event sourcing.
 :::
 
-:::rule id="STD-CS-052" severity="error" category="dependencies" domain="csharp"
-title: Wolverine Messaging Version
-
+:::rule id="STD-CS-052" severity="error" category="dependencies" domain="csharp" tags="csharp, dependencies, wolverine, durable, messaging"
 The codebase shall use Wolverine ≥ 5.0.0 for durable messaging.
 :::
 
-:::rule id="STD-CS-053" severity="error" category="dependencies" domain="csharp"
-title: FluentValidation Version
-
+:::rule id="STD-CS-053" severity="error" category="dependencies" domain="csharp" tags="csharp, dependencies, fluentvalidation, input, validation"
 The codebase shall use FluentValidation ≥ 12.0.0 for input validation.
 :::

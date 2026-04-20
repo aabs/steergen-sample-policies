@@ -10,17 +10,13 @@ status: active
 
 ## Pre-Commit
 
-:::rule id="STD-CI-001" severity="error" category="pre-commit" domain="cicd"
-title: Git Pre-Commit Hooks
-
+:::rule id="STD-CI-001" severity="error" category="pre-commit" domain="cicd" tags="cicd, pre-commit, repositories, git, hooks, check"
 All repositories shall use git pre-commit hooks to check code quality before commits.
 :::
 
 ## Pipeline Gates
 
-:::rule id="STD-CI-010" severity="error" category="pipeline" domain="cicd"
-title: Pipeline Execution Stages
-
+:::rule id="STD-CI-010" severity="error" category="pipeline" domain="cicd" tags="cicd, pipeline, runs, execute, format, check"
 When a pipeline runs, it shall execute the following stages in order and all shall pass before merge or deployment:
 1. Restore and build (fail on warnings on `main`).
 2. Lint and analyse (Roslyn analysers, ESLint, Stylelint).

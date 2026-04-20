@@ -10,118 +10,82 @@ status: active
 
 ## Language & Framework
 
-:::rule id="STD-TS-001" severity="error" category="language" domain="typescript"
-title: TypeScript Version and Strict Mode
-
+:::rule id="STD-TS-001" severity="error" category="language" domain="typescript" tags="typescript, language, frontend, target, strict, mode"
 The frontend shall target TypeScript ≥ 5 with strict mode enabled.
 :::
 
-:::rule id="STD-TS-002" severity="error" category="language" domain="typescript"
-title: Implicit Any Types
-
+:::rule id="STD-TS-002" severity="error" category="language" domain="typescript" tags="typescript, language, permit, implicit, types"
 The TypeScript codebase shall not permit implicit `any` types.
 :::
 
-:::rule id="STD-TS-003" severity="error" category="framework" domain="typescript"
-title: React Version and Components
-
+:::rule id="STD-TS-003" severity="error" category="framework" domain="typescript" tags="typescript, framework, frontend, react, functional, components"
 The frontend shall use React ≥ 19 with functional components exclusively.
 :::
 
-:::rule id="STD-TS-004" severity="error" category="framework" domain="typescript"
-title: React Hooks Only
-
+:::rule id="STD-TS-004" severity="error" category="framework" domain="typescript" tags="typescript, framework, react, components, hooks, class"
 All React components shall use hooks; class components are not permitted.
 :::
 
-:::rule id="STD-TS-005" severity="error" category="framework" domain="typescript"
-title: Hook Dependency Arrays
-
+:::rule id="STD-TS-005" severity="error" category="framework" domain="typescript" tags="typescript, framework, react, hooks, declare, exhaustive"
 All React hooks shall declare exhaustive dependency arrays.
 :::
 
-:::rule id="STD-TS-006" severity="error" category="build" domain="typescript"
-title: Vite Build Tool
-
+:::rule id="STD-TS-006" severity="error" category="build" domain="typescript" tags="typescript, build, frontend, vite, tool"
 The frontend shall use Vite ≥ 7 as the build tool.
 :::
 
 ## Styling
 
-:::rule id="STD-TS-010" severity="error" category="styling" domain="typescript"
-title: TailwindCSS for Styling
-
+:::rule id="STD-TS-010" severity="error" category="styling" domain="typescript" tags="typescript, styling, frontend, tailwindcss"
 The frontend shall use TailwindCSS for styling.
 :::
 
-:::rule id="STD-TS-011" severity="error" category="styling" domain="typescript"
-title: SCSS Nesting Depth
-
+:::rule id="STD-TS-011" severity="error" category="styling" domain="typescript" tags="typescript, styling, scss, selectors, exceed, levels"
 Where SCSS is used, selectors shall not exceed 3 levels of nesting.
 :::
 
-:::rule id="STD-TS-012" severity="error" category="styling" domain="typescript"
-title: SCSS Naming Conventions
-
+:::rule id="STD-TS-012" severity="error" category="styling" domain="typescript" tags="typescript, styling, scss, bem, design-system, token-driven"
 Where SCSS is used, the codebase shall follow BEM or design-system token-driven naming.
 :::
 
-:::rule id="STD-TS-013" severity="error" category="styling" domain="typescript"
-title: Design System Tokens
-
+:::rule id="STD-TS-013" severity="error" category="styling" domain="typescript" tags="typescript, styling, frontend, design, figma-generated, tokens"
 The frontend shall use design system and Figma-generated tokens for visual consistency.
 :::
 
 ## Formatting & Linting
 
-:::rule id="STD-TS-020" severity="error" category="quality" domain="typescript"
-title: Prettier Code Formatting
-
+:::rule id="STD-TS-020" severity="error" category="quality" domain="typescript" tags="typescript, quality, prettier, formatting"
 The TypeScript codebase shall use Prettier for code formatting.
 :::
 
-:::rule id="STD-TS-021" severity="error" category="quality" domain="typescript"
-title: ESLint Configuration
-
+:::rule id="STD-TS-021" severity="error" category="quality" domain="typescript" tags="typescript, quality, eslint, rules"
 The TypeScript codebase shall use ESLint ≥ 9 with TypeScript ESLint rules.
 :::
 
-:::rule id="STD-TS-022" severity="error" category="quality" domain="typescript"
-title: Stylelint for SCSS
-
+:::rule id="STD-TS-022" severity="error" category="quality" domain="typescript" tags="typescript, quality, scss, exist, stylelint, linting"
 Where SCSS files exist, the codebase shall use Stylelint for linting.
 :::
 
-:::rule id="STD-TS-023" severity="error" category="quality" domain="typescript"
-title: Linting and Formatting Resolution
-
+:::rule id="STD-TS-023" severity="error" category="quality" domain="typescript" tags="typescript, quality, committing, frontend, resolve, eslint"
 When committing frontend code, the developer shall resolve all ESLint and Prettier findings.
 :::
 
 ## Testing
 
-:::rule id="STD-TS-030" severity="error" category="testing" domain="typescript"
-title: Vitest Test Runner
-
+:::rule id="STD-TS-030" severity="error" category="testing" domain="typescript" tags="typescript, testing, frontend, tests, vitest, test"
 All frontend tests shall use Vitest ≥ 4.0.3 as the test runner.
 :::
 
-:::rule id="STD-TS-031" severity="error" category="testing" domain="typescript"
-title: Frontend Test Categorisation
-
+:::rule id="STD-TS-031" severity="error" category="testing" domain="typescript" tags="typescript, testing, frontend, tests, categorised, category"
 Frontend tests shall be categorised with `Category=Frontend` and excluded from backend test runs.
 :::
 
 ## API Client Generation
 
-:::rule id="STD-TS-040" severity="error" category="api" domain="typescript"
-title: Orval for API Client Generation
-
+:::rule id="STD-TS-040" severity="error" category="api" domain="typescript" tags="typescript, api, frontend, orval, generate, typed"
 The frontend shall use Orval to generate typed API clients from OpenAPI specifications.
 :::
 
-:::rule id="STD-TS-041" severity="error" category="api" domain="typescript"
-title: API Client Regeneration
-
+:::rule id="STD-TS-041" severity="error" category="api" domain="typescript" tags="typescript, api, openapi, specification, changes, regenerate"
 When an OpenAPI specification changes, the developer shall regenerate API clients via `npm run orval:generate`.
 :::
